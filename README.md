@@ -1,5 +1,9 @@
 # zsh_minimal
-A perscrptive introduction to ZSH, FZF, Starship, and more...
+A prescriptive introduction to ZSH, FZF, Starship, and more...
+
+Disclaimer: these configurations come with absolutely no warranty.
+
+It's the nature of shell configuration to be fragile and finicky.
 
 ---
 
@@ -22,7 +26,7 @@ brew install zsh fzf starship kitty font-sauce-code-pro-nerd-font
 cp ~/.zshrc ~/.zshrc.bak
 wget https://raw.githubusercontent.com/gehrigkeane/zsh_minimal/main/.zshrc ~/.zshrc
 
-mkdir -p ~/.config
+mkdir -p ~/.config/kitty
 
 cp ~/.config/starship.toml ~/.config/starship.toml.bak
 wget https://raw.githubusercontent.com/gehrigkeane/zsh_minimal/main/starship.toml ~/.config/starship.toml

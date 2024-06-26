@@ -67,6 +67,27 @@ zinit snippet OMZ::lib/git.zsh
 zinit snippet OMZP::git
 zinit cdclear -q # <- forget completions provided by Git plugin
 
+# lots of completions
+zinit ice wait'1' lucid as'completion'
+zinit light zsh-users/zsh-completions                                         # https://github.com/zsh-users/zsh-completions
+
+# alias suggestions
+zinit ice lucid
+zinit light djui/alias-tips                                                   # https://github.com/djui/alias-tips
+
+# syntax highlighting
+zinit ice lucid atinit'zpcompinit'
+zinit light zdharma-continuum/fast-syntax-highlighting                        # https://github.com/zdharma-continuum/fast-syntax-highlighting
+
+# zsh command suggestions
+# zinit ice wait atload"_zsh_autosuggest_start"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+zinit light zsh-users/zsh-autosuggestions                                     # https://github.com/zsh-users/zsh-autosuggestions
+
+# substring search
+zinit ice lucid
+zinit light zsh-users/zsh-history-substring-search                            # https://github.com/zsh-users/zsh-history-substring-search
+
 #
 # fzf history
 zinit ice lucid wait'0'
@@ -84,31 +105,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always $realpath' # 
 zstyle ':fzf-tab:*' switch-group '<' '>'                                      # switch group using `<` and `>`
 # zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup                              # tmux popup
 
-# substring search
-zinit ice lucid
-zinit light zsh-users/zsh-history-substring-search                            # https://github.com/zsh-users/zsh-history-substring-search
-
-# fzf git awesomeness
-# export FORGIT_NO_ALIASES="1"
-zinit ice wait'1' lucid
-zinit light wfxr/forgit                                                       # https://github.com/wfxr/forgit
-
-# lots of completions
-zinit ice wait'1' lucid as'completion'
-zinit light zsh-users/zsh-completions                                         # https://github.com/zsh-users/zsh-completions
-
-# syntax highlighting
-zinit ice lucid atinit'zpcompinit'
-zinit light zdharma-continuum/fast-syntax-highlighting                        # https://github.com/zdharma-continuum/fast-syntax-highlighting
-
-# zsh command suggestions
-# zinit ice wait atload"_zsh_autosuggest_start"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-zinit light zsh-users/zsh-autosuggestions                                     # https://github.com/zsh-users/zsh-autosuggestions
-
-# alias suggestions
-zinit ice lucid
-zinit light djui/alias-tips                                                   # https://github.com/djui/alias-tips
 
 #
 # History Config
@@ -137,15 +133,15 @@ setopt HIST_VERIFY                # Whenever the user enters a line with history
 #
 # Source `.shell*` configuration
 #
-source ~/.profile
+# source ~/.profile
 
 #
 # MacOS <> ZSH key bindings
 # ref: https://stackoverflow.com/a/29403520
 #
-bindkey "^U" backward-kill-line
-bindkey "^X\\x7f" backward-kill-line
-bindkey "^X^_" redo
+# bindkey "^U" backward-kill-line
+# bindkey "^X\\x7f" backward-kill-line
+# bindkey "^X^_" redo
 # In the event of weird up and down behavior try these:
 # bindkey '^[[A' up-line-or-search
 # bindkey '^[[B' down-line-or-search
@@ -154,9 +150,9 @@ bindkey "^X^_" redo
 # Mise
 # ref: https://github.com/jdx/mise
 #
-eval "$(mise completion zsh)"
-eval "$(mise activate zsh)"
-eval "$(ln -sfn $MISE_DATA_DIR $HOME/.asdf)"
+# eval "$(mise completion zsh)"
+# eval "$(mise activate zsh)"
+# eval "$(ln -sfn $MISE_DATA_DIR $HOME/.asdf)"
 
 #
 # Starship (last line)
